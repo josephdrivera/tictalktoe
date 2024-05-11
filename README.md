@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TicTalkToe
+
+TicTalkToe is a real-time multiplayer Tic Tac Toe game that incorporates a chat feature, allowing players to communicate while playing. This project is built using Next.js, Socket.IO for real-time communication, and styled with Tailwind CSS.
+
+## Features
+
+- Multiplayer Tic Tac Toe game.
+- Real-time chat during the game.
+- Leaderboard to track wins.
+- Responsive design for desktop and mobile users.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Before running this project, make sure you have Node.js installed on your machine. You can download and install Node.js from [Node.js official site](https://nodejs.org/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   https://github.com/josephdrivera/tictalktoe.git
+   ```
+   ```bash
+   
+   cd tictalktoe
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Install the dependencies:
+   ```bash
+   npm install
+   
+3. Run the development server:
+   ```bash
+    npm run dev
+   
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## Learn More
+### Usage
 
-To learn more about Next.js, take a look at the following resources:
+After starting the server, you can play Tic Tac Toe with another player in real-time. Enter your username to join the game lobby. You can start playing by clicking on an empty cell in the Tic Tac Toe grid when it's your turn.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Use the chat feature on the left side of the screen to communicate with other players. All messages will appear in real time.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Fork the Project
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
+Commit your Changes (git commit -m 'Add some AmazingFeature')
+Push to the Branch (git push origin feature/AmazingFeature)
+Open a Pull Request
