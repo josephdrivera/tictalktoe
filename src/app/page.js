@@ -1,13 +1,12 @@
 import React from 'react';
 
-const HomePage = () => {
+const GamePage = () => {
 	return (
 		<div>
-			<h1>Home Page</h1>
+			<h1>Welcome to TicTalkToe</h1>
+			<p>Game page coming soon...</p>
 		</div>
 	);
 };
 
-console.log("HomePage loaded:", HomePage);
-
-export default HomePage;
+export default GamePage;
