@@ -1,26 +1,38 @@
-import React  from "react";
+"use client"; // Add this line to indicate that this file uses Client Components
 
-const  GamePage = () => {
+import React, { useEffect, useState } from 'react';
+import io from 'socket.io-client';
+
+let socket;
+
+const GamePage = () => {
 	const [roomId, setRoomId] = useState('');
 
-	const  createRoom = async ()=>{
-		const response = await fetch('/api/room', {
-			method: 'POST',
+	useEffect(() => {
+		socket = io();
+
+		socket.on('roomCreated', (id) => {
+			setRoomId(id);
+			console.log(`Room created with ID: ${id}`);
 		});
-		const data = await response.json();
-		setRoomId(data.roomId);
-		alert(`Room created with ID: ${data.roomId}`);
+
+		return () => {
+			socket.off('roomCreated');
+			socket.close();
+		};
+	}, []);
+
+	const createRoom = () => {
+		socket.emit('createRoom');
 	};
 
 	return (
 		<div>
-			<h1>Welcome to TicTalkToe</h1>
-			<p>Game page coming soon...</p>
+			<h1>Game Page</h1>
 			<button onClick={createRoom}>Create Room</button>
-			<p>Room ID: {roomId}</p>
+			<p>Current Room ID: {roomId}</p>
 		</div>
 	);
-
-}
+};
 
 export default GamePage;

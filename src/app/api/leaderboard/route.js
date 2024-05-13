@@ -1,16 +1,19 @@
-import {nanoid} from 'nanoid';
+const leaderboard = [];
 
-export default async function handler(req, res) {
-	if (req.method === 'POST') {
-		// Create a new room
-		const roomId = nanoid(6);
-		// Ideally, store room details in a database
-		res.status(201).json({roomId, message: 'Room created successfully'});
-	} else if  (res.method === 'GET') {
-		//nList room or return room details
-		res.status(200).json({message: 'Rooms fetched successfully'});}
-		else {
-		res.setHeader('Allow', ['POST', 'GET']);
-		res.status(405).end(`Method ${req.method} Not Allowed`);
+export default function handler(req, res) {
+	switch (req.method) {
+		case 'POST':
+			// Record a game result
+			const { player, score } = req.body;
+			leaderboard.push({ player, score });
+			res.status(201).json({ message: 'Result added to leaderboard' });
+			break;
+		case 'GET':
+			// Get the leaderboard
+			res.status(200).json(leaderboard);
+			break;
+		default:
+			res.setHeader('Allow', ['POST', 'GET']);
+			res.status(405).end(`Method ${req.method} Not Allowed`);
 	}
 }
